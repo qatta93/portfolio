@@ -1,47 +1,3 @@
-  @keyframes intro{
-    0%{
-      opacity: 1;
-    }
-    40%{
-      opacity: 0.3;
-    }
-    100%{
-      display: none;
-      opacity: 0;
-    }
-  }
-
-  /* @-webkit-keyframes intro{
-    0%{
-      opacity: 1;
-    }
-    40%{
-      opacity: 0.3;
-    }
-    100%{
-      display: none;
-      opacity: 0;
-    }
-  } */
-
-  @keyframes home{
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  @-webkit-keyframes home{
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
 
 html {
     font-size: 62.5%;
@@ -59,11 +15,16 @@ body {
     overflow: hidden;
 }
 
+/**********************************************************  INTRO ************************************************************************* */
+
  .intro {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
     background-color: rgb(252, 255, 251);
     font-family: 'Dosis', sans-serif;
     height: 100vh;
-    /* position: relative; */
     animation-name: intro;
     -webkit-animation-name: intro;
     animation-duration: 4s;
@@ -80,8 +41,6 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-/* 
-@import "compass/css3";
 
 .intro__text {
     position: absolute;
@@ -91,63 +50,7 @@ body {
     font-size: 2rem;
     word-spacing: 0.4rem;
     letter-spacing: 0.1rem;
-    animation-name: text;
-    -webkit-animation-name: text;
-    animation-duration: 5s;
-    -webkit-animation-duration: 5s;
-    animation-delay: 6s;
-    -webkit-animation-delay: 6s;
-    animation: animate 1s linear infinite;
-    -webkit-animation: animate 1s linear infinite;
 }
-
-span {
-    display: inline-block;
-    text-shadow: 0 0 0 black;
-    animation: smoky 4s 3s both;
-    -webkit-animation: smoky 4s 3s both;
-  }
-  
-  span:nth-child(even){
-    animation-name: smoky-mirror;
-    -webkit-animation-name: smoky-mirror;
-  }
-  
-  @keyframes smoky {
-    60% {
-      text-shadow: 0 0 40px black;
-    }
-    to {
-      transform:
-        translate3d(15rem,8rem,0)
-        rotate(-40deg)
-        skewX(70deg)
-        scale(1.5);
-      text-shadow: 0 0 20px black;
-      opacity: 0;
-    }
-  }
-  
-  @keyframes smoky-mirror {
-    60% {
-      text-shadow: 0 0 40px black; }
-    to {
-      transform:
-        translate3d(18rem,8rem,0)
-        rotate(-40deg) 
-        skewX(-70deg)
-        scale(2);
-       text-shadow: 0 0 20px black;
-      opacity: 0;
-    }
-  }
-  
-  @for $item from 1 through 7 {
-    span:nth-of-type(#{$item}){ 
-      animation-delay: #{(3 + ($item/10))}s; 
-      -webkit-animation-delay: #{(3 + ($item/10))}s;
-    }
-  }  */
 
 
 /**********************************************************  HOME ************************************************************************* */
@@ -155,11 +58,14 @@ span {
 .home {
     height: 100vh;
     width: 100%;
-    animation-name: home;
-    animation-delay: 0s;
-    animation-duration: 0s;
-    animation-fill-mode: forwards;
-    position: relative;
+    /* animation-name: home;
+    animation-delay: 6.5s;
+    animation-duration: 5s;
+    animation-fill-mode: forwards; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* opacity: 0; */
 }
 
 .navi {
@@ -243,10 +149,11 @@ span {
   }
 }*/
 
+/**********************************************************  ABOUT-ME ************************************************************************* */
 
 
 .fixed-bg {
-    background-image: url(/img/background.jpg);
+    background-image: url(/portfolio/img/background.jpg);
     height: 100vh;
     width: 100%;
     background-attachment: fixed;
@@ -263,7 +170,7 @@ span {
   height: 100%;
   width: 100%;
   color: white;
-  background: rgba(70, 67, 67, .6);
+  background: rgba(62, 89, 102, 0.6);
   overflow: scroll;
 }
 
@@ -332,17 +239,23 @@ span {
 }
 
 .pdf {
-  color: black;
-  background: white;
-  margin-left: 30rem;
-  transition: all .2s;
+  text-align: center;
 }
 
-.pdf:hover {
+.pdf p a{
+  display: inline-block;
+  vertical-align: middle;
+  background: white;
+  color: black;
+}
+
+.pdf p a:hover {
   color: white;
   background: black;
   text-decoration: none;
 }
+
+
 
 
 .about-me::-webkit-scrollbar { width: 0 !important }
@@ -360,8 +273,10 @@ span {
   text-align: center;
 }
 
+/**********************************************************  SKILLS ************************************************************************* */
+
 .skills {
-  height: 15rem;
+  height: 20rem;
   margin-top: 4rem;
   margin-bottom: 4rem;
   width: 100%;
@@ -372,6 +287,7 @@ span {
 
 .skills__img {
   height: 9rem;
+  margin-top: 0.5rem;
 }
 
 .dot {
@@ -394,6 +310,14 @@ span {
 .dots-corel > * {
   background-color: #18A615;
 }
+
+.skills .row li > p {
+  position: relative;
+  top: 20%;
+  font-size: 2rem;
+}
+
+/**********************************************************  PROJECTS ************************************************************************* */
 
 .projects {
   position: relative;
@@ -420,36 +344,106 @@ span {
   letter-spacing: 0.3rem; 
 }
 
-
-.proj {
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
   height: 30rem;
   width: 80%;
-  position: relative;
-  top: 15rem;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  font-size: 3rem;
-  margin-bottom: 10rem;
-  box-shadow: 0.7rem 1rem 2rem rgba(192, 189, 189, 0.4);
-  border-radius: 10px;
-  overflow: hidden;
+  left: 7rem;
+  background-color: rgba(238, 236, 236, 0.3) !important; 
+  border: none !important;
 }
 
-.proj--moto {
-  background-image: url(/img/moto.jpg);
+.card__side {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10rem;
+  text-align: center;
+  transition: all .8s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  box-shadow: 0.7rem 1rem 2rem rgba(192, 189, 189, 0.4);
+  border-radius: 10px;
+}
+
+.card__side--back {
+  transform: rotateY(180deg);
+  padding: 2rem;
+  background-color: rgb(119, 201, 201);
+}
+
+.card:hover .card__side--front {
+  transform: rotateY(-180deg);
+}
+
+.card:hover .card__side--back {
+  transform: rotateY(0);
+}
+
+.card__side--front p {
+  background-color: rgba(255, 255, 255, .6);
+  font-size: 3rem;
+}
+
+.card__side--back p {
+  font-size: 2rem;
+  position: absolute;
+  width: 70%;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card--front--moto {
+  background-image: url(/portfolio/img/moto.jpg);
   background-position: center center;
   background-size: cover;
 }
 
-.proj--moto p {
-  background-color: rgba(255, 255, 255, .6)
+.card--front--mike {
+  background-image: linear-gradient(rgb(90, 162, 175), rgb(64, 73, 64));
+  background-position: center center;
+  background-size: cover;
+}
+
+.card--front--3 {
+  background-image: linear-gradient(rgb(90, 162, 175), rgb(64, 73, 64));
+  background-position: center center;
+  background-size: cover;
+}
+
+.card--front--4 {
+  background-image: linear-gradient(rgb(90, 162, 175), rgb(64, 73, 64));
+  background-position: center center;
+  background-size: cover;
+}
+
+.card__button {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.3rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 10px;
+  border: none;
+  animation: shadow-pulse 1s infinite;
+}
+
+.card__button__link:hover {
+  text-decoration: none;
 }
 
 
 /**********************************************************  FOOTER ************************************************************************* */
-
-
 
 footer {
   height: 10rem;
@@ -468,3 +462,71 @@ footer {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+/**********************************************************  ANIMATIONS ************************************************************************* */
+
+
+@keyframes intro{
+  0%{
+    opacity: 1;
+  }
+  40%{
+    opacity: 0.3;
+  }
+  100%{
+    display: none;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes intro{
+  0%{
+    opacity: 1;
+  }
+  40%{
+    opacity: 0.3;
+  }
+  100%{
+    display: none;
+    opacity: 0;
+  }
+} 
+
+@keyframes home{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes home{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shadow-pulse
+{
+   0% {
+        box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+   }
+   100% {
+        box-shadow: 0 0 20px 15px rgba(255, 255, 255, 0);
+   }
+}
+
+@-webkit-keyframes shadow-pulse
+{
+   0% {
+        box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+   }
+   100% {
+        box-shadow: 0 0 20px 15px rgba(255, 255, 255, 0);
+   }
+}
+
