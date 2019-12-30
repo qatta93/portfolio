@@ -6,6 +6,7 @@ html {
 
 body {
     height: 100vh;
+    width: 100%;
     box-sizing: border-box;
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0;
@@ -14,6 +15,15 @@ body {
     backface-visibility: hidden;
     overflow: hidden;
 }
+
+.container-fluid {
+  padding-right:0;
+  padding-left:0;
+  margin-right:auto;
+  margin-left:auto
+}
+
+
 
 /**********************************************************  INTRO ************************************************************************* */
 
@@ -24,7 +34,8 @@ body {
     opacity: 1;
     background-color: rgb(252, 255, 251);
     font-family: 'Dosis', sans-serif;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
     animation-name: intro;
     -webkit-animation-name: intro;
     animation-duration: 4s;
@@ -35,22 +46,54 @@ body {
     -webkit-animation-fill-mode: forwards;
 }
 
+.intro__content {
+  position: relative;
+  height: 100%;
+}
+
 .intro__img {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
 
 .intro__text {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
-    word-spacing: 0.4rem;
-    letter-spacing: 0.1rem;
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  word-spacing: 0.4rem;
+  letter-spacing: 0.2rem;
 }
+
+.intro__btn {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.3rem;
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  background-color: white;
+  border-radius: 10px;
+  border: none;
+  animation: shadow-pulse 1.2s infinite;
+  z-index: 999;
+}
+
+.intro__btn:hover {
+  cursor: pointer;
+}
+
+.intro__btn__link:hover {
+  text-decoration: none;
+}
+
 
 
 /**********************************************************  HOME ************************************************************************* */
@@ -58,22 +101,24 @@ body {
 .home {
     height: 100vh;
     width: 100%;
-    /* animation-name: home;
+    animation-name: home;
+    -webkit-animation-name: home;
     animation-delay: 6.5s;
+    -webkit-animation-delay: 6.5s;
     animation-duration: 5s;
-    animation-fill-mode: forwards; */
+    -webkit-animation-duration: 5s;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
     position: absolute;
     top: 0;
     left: 0;
-    /* opacity: 0; */
+    opacity: 0;
 }
 
 .navi {
     height: 5rem;
-    position: absolute;
+    position: relative;
     width: 100%;
-    left: 0;
-    top: 0;
     background: linear-gradient(45deg, rgba(0,0,0,.6) 0 60%, rgba(238, 238, 238, 0.3) 80% 100%);
     z-index: 99;
  }
@@ -81,13 +126,15 @@ body {
 .navi-email {
     font-size: 2rem;
     position: absolute;
-    top: 0.8rem;
-    left: 8rem;
+    left: 5%;
+    z-index: 100;
+    top: 0.5rem;
 }
 
 .navi-email a {
     color: white;
     word-spacing: 0.8rem;
+    transform: translateY(-50%);
 }
 
 .navi-email a:hover {
@@ -96,16 +143,16 @@ body {
 }
 
 .navi-img {
-    position: relative;
     float: right;
-    top: 0.5rem;
     right: 8rem;
     word-spacing: 3rem;
     padding: 0.5rem;
+    z-index: 100;
+    top: 0.2rem;
 }
 
 .navi-img img {
-    height: 2.5rem;
+    height: 3.5rem;
 }
 
 .navi-img a{
@@ -142,22 +189,15 @@ body {
 }
 
 
-/* TODO zmienic na telefonie, zeby sie nie scrollowalo 
-@media only screen and (max-device-width: 1366px) {
-  .parallax {
-    background-attachment: scroll;
-  }
-}*/
-
 /**********************************************************  ABOUT-ME ************************************************************************* */
 
 
 .fixed-bg {
-    background-image: url(/portfolio/img/background.jpg);
+    background-image: url(../img/background.jpg);
     height: 100vh;
     width: 100%;
     background-attachment: fixed;
-    background-position: center center;
+    background-position: center right;
     background-repeat: no-repeat;
     background-size: cover;
     display: table;
@@ -184,61 +224,65 @@ body {
 }
 
 .text {
-  padding: 10rem 60rem 10rem 8rem;
+  padding: 5% 40% 10% 5%;
   scroll-padding: 0px 0px 0px 0px;
+  text-align: center;
 }
 
 .text h1 {
-  font-size: 4rem;
+  font-family: 'Fredericka the Great', cursive;
+  margin: 5% 0 2% 0;
   margin-bottom: 5rem;
-  letter-spacing: 1.6rem;
+  font-size: 3.1vw;
+  letter-spacing: 1.7rem;
   word-spacing: 3rem;
   text-transform: uppercase;
+  white-space: nowrap;
+  text-align: center;
+
 }
 
 .me {
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-align: justify;
+}
+.me p {
+  width: 100%;
 }
 
 .text-indent {
   text-indent: 5rem;
 }
 
-.me span.who {
-  margin: 0 0 0 16rem;
+.who {
+  display: flex;
+  align-items: center;
+  text-align: center;
   color: rgb(94, 221, 238);
-  position: relative;
+  margin-bottom: 3%;
 }
 
-.me span.who:before {
+.who:before,
+.who:after {
   content: "";
-  display: block;
-  width: 14rem;
-  height: 2px;
-  background-color: rgb(94, 221, 238);
-  position: absolute;
-  left: -16rem;
-  top: 50%;
+  flex: 1;
+  border-bottom: 1px solid rgb(94, 221, 238);
 }
 
-.me span.who:after{
-  content: "";
-  display: block;
-  width: 15rem;
-  height: 2px;
-  background-color: rgb(94, 221, 238);
-  position: absolute;
-  right: -17rem;
-  top: 50%;
+.who:before {
+  margin-right: 4%;
+}
+
+.who:after{
+  margin-left: 4%;
 }
 
 .me span.football {
   color: rgb(183, 239, 247);
-  
 }
 
 .pdf {
+  text-transform: uppercase;
   text-align: center;
 }
 
@@ -247,6 +291,7 @@ body {
   vertical-align: middle;
   background: white;
   color: black;
+  padding: 0 1%;
 }
 
 .pdf p a:hover {
@@ -266,6 +311,7 @@ body {
   display: inline-block;
   align-content: center;
   width: 100%;
+  margin: 0 !important;
 }
 
 .row li {
@@ -276,17 +322,16 @@ body {
 /**********************************************************  SKILLS ************************************************************************* */
 
 .skills {
-  height: 20rem;
+  height: 17rem;
   margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
   width: 100%;
   background-color:#666;
   list-style: none;
-  padding-left: 3rem;
 }
 
 .skills__img {
-  height: 9rem;
+  height: 7rem;
   margin-top: 0.5rem;
 }
 
@@ -295,8 +340,8 @@ body {
   display: inline-block;
   text-align: center;
   bottom: -2rem;
-  height: 18px;
-  width: 18px;
+  height: 15px;
+  width: 15px;
   background-color: #bbb;
   border-radius: 50%;
   margin-left: 0.2rem;
@@ -321,25 +366,28 @@ body {
 
 .projects {
   position: relative;
-  height: 110rem;
+  height: 100rem;
   width: 100%;
   background-color: white;
   color: black;
-  padding: 6rem 8rem 0rem 8rem;
+  padding: 5% 10% 0 10%;
 }
 
 .projects-box {
   background-color: rgba(238, 236, 236, 0.3);
   margin-bottom: 7rem;
   height: 45rem;
-  padding: 2rem;
+  padding: 2%;
+  margin: 0 7%;
 }
+
+
 
 .projects-box h2 {
   text-align: center;
   margin-bottom: 5rem;
   text-decoration: underline;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-style: italic;
   letter-spacing: 0.3rem; 
 }
@@ -348,11 +396,12 @@ body {
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 30rem;
-  width: 80%;
-  left: 7rem;
+  height: 25rem;
+  width: 70%;
   background-color: rgba(238, 236, 236, 0.3) !important; 
   border: none !important;
+  margin: 0 auto;
+  
 }
 
 .card__side {
@@ -387,11 +436,11 @@ body {
 
 .card__side--front p {
   background-color: rgba(255, 255, 255, .6);
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .card__side--back p {
-  font-size: 2rem;
+  font-size: 1.7rem;
   position: absolute;
   width: 70%;
   top: 40%;
@@ -400,7 +449,7 @@ body {
 }
 
 .card--front--moto {
-  background-image: url(/portfolio/img/moto.jpg);
+  background-image: url(../img/moto.jpg);
   background-position: center center;
   background-size: cover;
 }
@@ -530,3 +579,578 @@ footer {
    }
 }
 
+/**********************************************************  MEDIA QUERIES ************************************************************************* */
+
+@media screen and (max-width:1200px) {
+  .navi {
+    height: 4rem;
+  }
+  .navi-email {
+    font-size: 1.6rem;
+  }
+  .navi-email-img {
+    height: 1.6rem;
+  }
+  .navi-img img {
+    height: 3rem;
+  }
+  .text h1 {
+    font-size: 2.5vw;
+  }
+  .photo-me {
+    height: 15rem;
+    width: 15rem;
+  }
+  .text {
+    padding: 5% 40% 5% 5%
+  }
+  .me {
+    font-size: 1.5rem;
+  }
+  .skills {
+    height: 13rem;
+  }
+  .skills__img {
+    height: 5rem;
+  }
+  .dot {
+    height: 12px;
+    width: 12px;
+  }
+  .skills .row li > p {
+    font-size: 1.5rem;
+  }
+  .projects {
+    height: 82rem;
+  }
+  .projects-box {
+    height: 35rem;
+  }
+  .projects-box h2 {
+    font-size: 2rem;
+  }
+  .card {
+    height: 20rem;
+    width: 70%;
+  }
+  .card__side--front p {
+    font-size: 1.7rem;
+  }
+  .card__side--back {
+    padding: 1rem;
+  }
+  .card__side--back p {
+    font-size: 1.3rem;
+  }
+  .card__button {
+    font-size: 1rem;
+    padding: 0.7rem;
+  }
+  footer {
+    height: 8rem;
+  }
+  .copy-rights {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width:900px) {
+  /* TODO zmienic na telefonie, zeby sie nie scrollowalo  */
+  .fixed-bg {
+    background-attachment: scroll;
+  }
+  .navi {
+    height: 3rem;
+  }
+  .navi-email {
+    font-size: 1.3rem;
+  }
+  .navi-email-img {
+    height: 1.3rem;
+  }
+  .navi-img {
+    right: 5rem;
+  }
+  .navi-img img {
+    height: 1.7rem;
+  }
+  .text h1 {
+    font-size: 2.2vw;
+    word-spacing: 1.2rem;
+    letter-spacing: 1.5rem;
+  }
+  .photo-me {
+    height: 13rem;
+    width: 13rem;
+  }
+  .text {
+    padding: 5% 40% 4% 5%
+  }
+  .text h1 {
+    margin-bottom: 3rem;
+  }
+  .me {
+    font-size: 1.3rem;
+  }
+  .text-indent {
+    text-indent: 4rem;
+  }
+  .skills {
+    height: 9rem;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+  }
+  .skills__img {
+    height: 4rem;
+    margin-top: -0.3rem;
+  }
+  .dot {
+    height: 9px;
+    width: 9px;
+    bottom: -0.8rem;
+  }
+  .skills .row li > p {
+    font-size: 1.1rem;
+    top: 8%;
+  }
+  .projects {
+    height: 60rem;
+  }
+  .projects-box {
+    height: 26em;
+  }
+  .projects-box h2 {
+    font-size: 1.8rem;
+    margin-bottom: 4rem;
+  }
+  .card {
+    height: 15rem;
+    width: 70%;
+  }
+  .card__side--front p {
+    font-size: 1.4rem;
+  }
+  .card__side--back {
+    padding: 0.8rem;
+  }
+  .card__side--back p {
+    font-size: 1rem;
+  }
+  .card__button {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+  footer {
+    height: 7rem;
+  }
+  .copy-rights {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width:750px) {
+  .eyes {
+    height: 20rem;
+  }
+  .intro__text {
+    font-size: 1.5rem;
+  }
+  .navi {
+    height: 2.5rem;
+  }
+  .navi-email {
+    font-size: 1rem;
+    top: 0.4rem;
+  }
+  .navi-email-img {
+    height: 1rem;
+  }
+  .navi-img {
+    top: -0.2rem;
+    right: 3rem;
+    word-spacing: 2rem;
+  }
+  .navi-img img {
+    height: 1.5rem;
+  }
+  .text h1 {
+    font-size: 2.3vw;
+    word-spacing: 0.8rem;
+    letter-spacing: 1.2rem;
+  }
+  .photo-me {
+    height: 11rem;
+    width: 11rem;
+    margin-right: 3rem;
+  }
+  .text h1 {
+    margin-bottom: 2rem;
+  }
+  .me {
+    font-size: 1rem;
+  }
+  .text-indent {
+    text-indent: 3rem;
+  }
+  .skills {
+    height: 7rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+  .skills__img {
+    height: 3rem;
+    margin-top: -0.5rem;
+  }
+  .dot {
+    height: 7px;
+    width: 7px;
+    bottom: -0.4rem;
+  }
+  .skills .row li > p {
+    font-size: 0.8rem;
+    top: 7%;
+  }
+  .projects {
+    height: 47rem;
+  }
+  .projects-box {
+    height: 20rem;
+  }
+  .projects-box h2 {
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+  }
+  .card {
+    height: 12rem;
+    width: 70%;
+  }
+  .card__side--front p {
+    font-size: 1.2rem;
+  }
+  .card__side--back {
+    padding: 0.6rem;
+  }
+  .card__side--back p {
+    font-size: 0.7rem;
+  }
+  .card__button {
+    font-size: 0.5rem;
+    padding: 0.3rem;
+  }
+  footer {
+    height: 6rem;
+  }
+  .copy-rights {
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+} 
+
+
+@media screen and (max-width:576px) {
+  .eyes {
+    height: 18rem;
+  }
+  .intro__text {
+    font-size: 1.3rem;
+  }
+  .text h1 {
+    font-size: 2.5vw;
+    word-spacing: 0.5rem;
+    letter-spacing: 1rem;
+    margin-top: 10%;
+  }
+  .photo-me {
+    height: 8rem;
+    width: 8rem;
+    border: 0.4px solid black;
+    margin-right: 2rem;
+  }
+  .text {
+    padding: 5% 35% 5% 5%
+  }
+  .me {
+    font-size: 1.2rem;
+  }
+  .text-indent {
+    text-indent: 3rem;
+  }
+  .skills {
+    height: 17rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  .skills__img {
+    height: 3.5rem;
+    margin-top: -0.5rem;
+  }
+  .skills__row {
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+  }
+  .dot {
+    height: 7px;
+    width: 7px;
+    bottom: -0.4rem;
+  }
+  .skills .row li > p {
+    font-size: 1rem;
+    top: 2%;
+  }
+  .projects {
+    height: 39rem;
+  }
+  .projects-box {
+    height: 17rem;
+  }
+  .projects-box h2 {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  .card {
+    height: 10rem;
+    width: 90%;
+  }
+  .card__side--front p {
+    font-size: 1rem;
+  }
+  .card__side--back {
+    padding: 0.4rem;
+  }
+  .card__side--back p {
+    font-size: 0.7rem;
+    top: 30%;
+  }
+  .card__button {
+    font-size: 0.4rem;
+    padding: 0.3rem;
+  }
+  footer {
+    height: 5rem;
+  }
+  .copy-rights {
+    font-size: 0.7rem;
+  }
+  .card:active .card__side--front {
+    transform: rotateY(-180deg);
+  }
+  
+  .card:active .card__side--back {
+    transform: rotateY(0);
+  }
+} 
+
+
+
+@media screen and (max-width:450px) {
+  .eyes {
+    height: 15rem;
+  }
+  .intro__text {
+    font-size: 1.1rem;
+    word-spacing: 0.1rem;
+  }
+  .navi {
+    height: 3.5rem;
+    background: linear-gradient(45deg, rgba(0,0,0,.6) 0 60%, rgba(238, 238, 238, 0.589) 80% 100%);
+  }
+  .navi-email {
+    font-size: 1.3rem;
+  }
+  .navi-email-img {
+    height:1.3rem;
+  }
+  .navi-img {
+    right: 0.8rem;
+    word-spacing: 2rem;
+  }
+  .navi-img img {
+    height: 2.3rem;
+  }
+  .fixed-bg {
+    background-image: url(../img/background-sm.jpg);
+  }
+  .text h1 {
+    font-size: 5vw;
+    word-spacing: 0.2rem;
+    letter-spacing: 0.7rem;
+    margin: 12% 0 8% 0;
+  }
+  .photo-me {
+    height: 13rem;
+    width: 13rem;
+    border: 0.2px solid black;
+    margin-right: 1.5rem;
+  }
+  .text {
+    padding: 5% 5% 5% 5%
+  }
+  .me {
+    font-size: 1.3rem;
+  }
+  .text-indent {
+    text-indent: 2rem;
+  }
+  .pdf p a{
+    padding: 3% 5%;
+    border-radius: 10%;
+
+  }
+  .skills {
+    height: 18rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+  .skills__img {
+    height: 4rem;
+    margin-top: -0.5rem;
+  }
+  .dot {
+    height: 7px;
+    width: 7px;
+    bottom: -0.2rem;
+  }
+  .skills .row li > p {
+    font-size: 1rem;
+    top: 2%;
+    white-space: nowrap;
+  }
+  .skills .row li:last-child p{
+    right: 0.5rem;
+  }
+  .projects {
+    height: 40rem;
+    padding: 2rem 0 !important;
+  }
+  .projects-box {
+    height: 18rem;
+    margin: 0;
+  }
+  .projects-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.1rem; 
+  }
+  .card {
+    height: 11rem;
+    width: 100%;
+  }
+  .card__side--front p {
+    background-color: rgba(255, 255, 255, .8);
+    font-size: 1.2rem;
+  }
+  .card__side--back {
+    padding: 0.1rem;
+  }
+  .card__side--back p {
+    font-size: 0.8rem;
+  }
+  .card__button {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+    margin-top: 0.7rem;
+  }
+  footer {
+    height: 6rem;
+  }
+  .copy-rights {
+    font-size: 1rem;
+  }
+} 
+
+
+
+
+@media screen and (max-width:340px) {
+  .eyes {
+    height: 12rem;
+  }
+  .intro__text {
+    font-size: 0.9rem;
+    word-spacing: 0rem;
+  }
+  .navi-email {
+    font-size: 1.1rem;
+    top: 20%;
+  }
+  .navi-email-img {
+    height: 1.1rem;
+  }
+  .navi-img {
+    right: 0.3rem;
+    word-spacing: 1rem;
+  }
+  .navi-img img {
+    height: 2.1rem;
+  }
+  .photo-me {
+    height: 10rem;
+    width: 10rem;
+    margin-right: 1rem;
+  }
+  .text h1 {
+    margin: 5% 0 8% 0;
+  }
+  .me {
+    font-size: 1.2rem;
+  }
+  .card {
+    height: 10rem;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width:1600px) {
+  .eyes {
+    height: 50rem;
+  }
+  .intro__text {
+    font-size: 3.5rem;
+    margin-top: 3rem;
+    word-spacing: 1rem;
+    letter-spacing: 0.3rem;
+  }
+  .navi {
+    height: 7rem;
+  }
+  .navi-email {
+    font-size: 3.2rem;
+  }
+  .navi-email-img {
+    height: 3.2rem;
+  }
+  .navi-img img {
+    height: 3.5rem;
+    margin-right: 1rem;
+  }
+  .text h1 {
+    font-size: 4rem;
+    word-spacing: 4rem;
+    letter-spacing: 3rem;
+  }
+  .photo-me {
+    height: 30rem;
+    width: 30rem;
+  }
+  .me {
+    font-size: 2.8rem;
+  }
+  .projects {
+    height: 115rem;
+  }
+  .projects-box {
+    height: 50rem;
+  }
+  .projects-box h2 {
+    font-size: 4rem;
+  }
+  .card {
+    height: 30rem;
+    width: 70%;
+  }
+}
