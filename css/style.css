@@ -36,14 +36,14 @@ body {
     font-family: 'Dosis', sans-serif;
     height: 100%;
     width: 100%;
-    animation-name: intro;
+    /* animation-name: intro;
     -webkit-animation-name: intro;
     animation-duration: 4s;
     -webkit-animation-duration: 4s;
     animation-delay: 4s;
     -webkit-animation-delay: 4s;
     animation-fill-mode: forwards;
-    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards; */
 }
 
 .intro__content {
@@ -200,9 +200,13 @@ body {
     background-position: center right;
     background-repeat: no-repeat;
     background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     display: table;
     color: white;
     overflow: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 .about-me  {
@@ -655,10 +659,6 @@ footer {
 }
 
 @media screen and (max-width:900px) {
-  /* TODO zmienic na telefonie, zeby sie nie scrollowalo  */
-  .fixed-bg {
-    background-attachment: scroll;
-  }
   .navi {
     height: 3rem;
   }
@@ -973,7 +973,7 @@ footer {
     height: 2.3rem;
   }
   .fixed-bg {
-    background-image: url(../img/background-sm.jpg);
+    background-position: left;
   }
   .text h1 {
     font-size: 5vw;
