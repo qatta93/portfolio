@@ -5,29 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,700|Fredericka+the+Great|Source+Sans+Pro:400,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,700|Martel:900|Satisfy|PT+Sans|Source+Sans+Pro:400,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <title>Myself</title>
 </head>
 
 <body>
-<section class="intro">
-    <div class="intro__content">
-        <div class="intro__img">
-            <img src="img/oczy 5.gif" alt="eyes" class="eyes">
-        </div>
-        <div class="intro__text">
-            be open-minded. be aware. be more.
-        </div>
-        <!-- <button class="intro__btn"><a href="#home" class="intro__btn__link">next</a></button> -->
-    </div>
-</section>
-<!-- <section class="home fixed-bg" id="home">
+<section class="home fixed-bg" id="home">
     <wrapper class="about-me">
+        <div class="wrap">
         <header>
-            <div class="navi">
+            <div class="navi" id="navi">
                 <div class="navi-email">
-                    <a href="mailto: panasiuk.patrycja@gmail.com" title="Tell me everything"><img src="img/email.png" class="navi-email-img"> panasiuk.patrycja@gmail.com</a>
+                    <a href="mailto: panasiuk.patrycja@gmail.com" title="Tell me everything" class="navi-email-link"><img src="img/email.png" class="navi-email-img"> panasiuk.patrycja@gmail.com</a>
                 </div>
                 <div class="navi-img">
                     <a href="https://github.com/qatta93" target="_blank"><img src="img/github.png" alt="github" title="GitHub"></a>
@@ -43,58 +34,83 @@
                     <img src="img/me2.png" alt="" class="photo-me">
                         <div class="who">Who am I ?</div>
                         <div class="text-indent">
-                            <p>Hi there! I am looking for my frst job as a frontend web developer && UI designer. I have been learnig HTML5, CSS3, SASS and JavaScript for a few months already. I am also really interested in UX design as a psychology has been my passion for ages.</p>
-                            <p>I am a creative, honest, open-minded and hard-working person who knows how to cooperate in a team. What is more, <span class="football">I love playing a table football and sharing cookies in an office!</span> I am not afraid of hard work and always willing to learn new skills in order to enhance my abilities. I like setting ambitious aims and do my best to achieve targets.</p>
-                            <p>By education, I am a double-graduated engineer - a civil engineer and a landscape architect. I had been working in this field for more or less a year and a half. Soon afterwards I decided to change my occupation and become a web developer where I would also use skills that I have acquired in my professional career so far.</p>
+                            <p>Hi there! I am looking for my frst job as a <span>frontend web developer && UI designer.</span> I have been learning <span>HTML5, CSS3, SASS, JavaScript and React</span> for a few months already. I am also really interested in UX design as a psychology has been my passion for ages.</p>
+                            <p>I am a creative, honest, open-minded and hard-working person who knows how to cooperate in a team. What is more, <span>I love playing a table football and sharing cookies in an office!</span> I am not afraid of hard work and always willing to learn new skills in order to enhance my abilities. I like setting ambitious aims and do my best to achieve targets.</p>
+                            <p>By education, <span>I am a double-graduated engineer - a civil engineer and a landscape architect.</span>  I had been working in this field for more or less a year and a half (i.a. in Germany). Soon afterwards I decided to change my occupation and become a web developer where I would also use skills that I have acquired in my professional career so far. <span> I was working in international teams and I really enjoyed that.</span></p>
                             <p>I am interested in travelling, doing sports and art. I have been in 30 countries on 4 continents so far. Thanks to that I became more open-minded person, improved an emotional intelligence and gained a knowledge about differenct cultures - which might help me understand the needs of users.</p>
                             <br>
                         </div>
                     <div class="pdf">
-                        <p>Would you like to know something more? Check my <b>CV</b> out:<br></p>
-                        <p><a href="Patrycja Panasiuk CV.pdf" download>HERE</a></p>
+                        <p>Would you like to know something more? Check my<b><span>&nbspCV&nbsp</span></b>out:<br></p>
+                        <p><a href="Patrycja_Panasiuk_ENG.pdf" target="_blank">HERE</a></p>
+                    </div>
+                    <div class="signature">
+                        Cheers! </br>
+                        </br>
+                        <span>Patrycja Panasiuk</span>
                     </div>
                         
                 </div>
             </div>
-            <div class="skills container-fluid">
-                <div class="row skills__row">
-                    <li class="col-4 col-sm-2"><img src="img/html.png" alt="html" title="HTML5" class="skills__img">
-                        <div class="dots-html">
-                            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            <div class="skills">
+                <div class="skills__header">Skills</div>
+                <div class="skills__box--1">
+                    <div class="skills__box__title--1"><h2>intermediate</h2></div>
+                    <div class="skills__box__img">
+                        <div class="skill">
+                            <img src="img/html.png" alt="html" title="HTML5" class="skills__img">
+                            <p>HTML5</p>
                         </div>
-                        <p>HTML5</p>
-                    </li>
-                    <li class="col-4 col-sm-2"><img src="img/css.png" alt="css" title="CSS4" class="skills__img">
-                        <div class="dots-css">
-                            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+                        <div class="skill">
+                            <img src="img/css.png" alt="css" title="CSS3" class="skills__img">  
+                            <p>CSS3</p>
                         </div>
-                        <p>CSS3</p>
-                    </li>
-                    <li class="col-4 col-sm-2"><img src="img/sass.png" alt="sass" title="SASS" class="skills__img">
-                        <div class="dots-sass">
-                            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+                        <div class="skill">
+                            <img src="img/rwd.png" alt="rwd" title="RWD" class="skills__img">
+                            <p>RWD</p>
                         </div>
-                        <p>SASS</p>
-                    </li>
-                    <li class="col-4 col-sm-2"><img src="img/js.png" alt="js" title="JavaScript" class="skills__img">
-                        <div class="dots-js">
-                            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
-                        </div>
-                        <p>JavaScript</p>
-                    </li>
-                    <li class="col-4 col-sm-2"><img src="img/photoshop.png" alt="ps" title="PhotoShop" class="skills__img">
-                        <div class="dots-ps">
-                            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
-                        </div>
-                        <p>PhotoShop</p>
-                    </li>
-                    <li class="col-4 col-sm-2"><img src="img/corel.png" alt="corel" title="CorelDraw X6" class="skills__img">
-                        <div class="dots-corel">
-                            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
-                        </div>
-                        <p>CorelDraw X6</p>
-                    </li>
+                    </div>
                 </div>
+                <div class="skills__box--2">
+                    <div class="skills__box__title--2"><h2>basic</h2></div>
+                    <div class="skills__box__img">
+                        <div class="skill">
+                            <img src="img/js.png" alt="js6" title="JSE6" class="skills__img">
+                            <p>JS E6</p>
+                        </div>
+                        <div class="skill">
+                            <img src="img/react.png" alt="React" title="React" class="skills__img">
+                            <p>React</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills__box--3">
+                    <div class="skills__box__title--3"><h2>additional</h2></div>
+                    <div class="skills__box__img">
+                        <div class="skill">
+                            <img src="img/photoshop6.png" alt="PhotoShop" title="PhotoShop" class="skills__img">
+                            <p>PhotoShop</p>
+                        </div>
+                        <div class="skill">
+                            <img src="img/corel.png" alt="corel" title="CorelDraw" class="skills__img">
+                            <p>CorelDraw X6</p>
+                        </div>
+                        <div class="skill">
+                            <img src="img/sass.png" alt="sass" title="SASS" class="skills__img">
+                            <p>SASS</p>
+                        </div>
+                        <div class="skill">
+                            <img src="img/bootstrap.png" alt="Bootstrap" title="Bootstrap" class="skills__img">
+                            <p>Bootstrap</p>
+                        </div>
+                        <div class="skill">
+                            <img src="img/figma.jpg" alt="Figma" title="Figma" class="skills__img">
+                            <p>Figma</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         
             </div>
             <div class="projects container-fluid">
@@ -115,7 +131,7 @@
                         <div class="col-6">
                             <div class="card">
                                 <div class="card__side card__side--front card--front--mike">
-                                        <p>COMING SOON</p>
+                                        <p>IN PROGRESS</p>
                                 </div>
                                 <div class="card__side card__side--back card--back--mike">
                                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
@@ -131,10 +147,10 @@
                         <div class="col-6">
                             <div class="card">
                                 <div class="card__side card__side--front card--front--3">
-                                        <p>COMING SOON</p>
+                                        <p>Budget Calculator</p>
                                 </div>
                                 <div class="card__side card__side--back card--back--3">
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                        <p>The App is written in JavaScript. </p>
                                         <button class="card__button"><a href="#" target="_blank" class="card__button__link">take me there!</a></button>
                                 </div>
                             </div>
@@ -142,7 +158,7 @@
                         <div class="col-6">
                             <div class="card">
                                 <div class="card__side card__side--front card--front--4">
-                                        <p>COMING SOON</p>
+                                        <p>IN PROGRESS</p>
                                 </div>
                                 <div class="card__side card__side--back card--back--4">
                                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
@@ -153,16 +169,48 @@
                     </div>
                 </div>
             </div>
+
+            <div class="contact" id="contact">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="contact__box">   
+                            <h1>CONTACT</h1>
+                            <p class="question">Do you have any questions? Let's talk! :) </p>
+                            <form class="contact__form" action="/send_form.php" method="post">
+                                <input type="text" name="name" id="name" placeholder="Name" required><br>
+                                <input type="email" name="email" id="email" placeholder="E-mail" required><br>
+                                <textarea type="text" name="message" id="message" cols="1" rows="4" placeholder="Tell me everything.." required></textarea>
+                                <input type="submit" value="send" class="contact__btn">
+                            </form>
+                            <p class="form__success">Your message was sent successfully. Thank you!</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img src="/img/speak.png" class="contact__icon">
+                    </div>
+                </div>
+            </div>
+
+            <div class="navigator">
+                <a href="#navi" title="take me to the top!"><img src="img/arrow.png" class="navigator__arrow">&nbsp TOP</button>
+            </div>
+
         </main>
         <footer>
             <div class="copy-rights">
                     <p>Created with passion by <b>QATTA</b> &copy; 2020 </p>
             </div>
+            
         </footer>
+    </div>
     </wrapper>
-</section> -->
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</section>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="http://malsup.github.com/jquery.form.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 <script type="text/javascript" src="project.js"></script>
 </body>
 
